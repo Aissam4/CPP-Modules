@@ -6,11 +6,11 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 16:06:47 by abarchil          #+#    #+#              #
-#    Updated: 2022/03/22 21:52:48 by abarchil         ###   ########.fr        #
+#    Updated: 2022/03/23 17:22:14 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILE = Phone_Book.cpp
+SRC_FILE = Phone_Book.cpp Encapsulation.cpp
 
 OBJ_FILE = $(SRC_FILE:.c=.o)
 
@@ -27,5 +27,5 @@ $(NAME) : $(OBJ_FILE)
 	$(CC) $(FLAGS) $(OBJ_FILE) -o $(NAME)
 fclean :
 	rm -rf $(NAME)
-re : clean all
+re : fclean all
 .PHONY : clean fclean re
