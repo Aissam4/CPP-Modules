@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:01:24 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 20:39:05 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 22:06:21 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,22 @@ Phone_Book::~Phone_Book(){}
 void    Phone_Book::SearchMethod(int index)
 {
 	std::cout << "index : " <<  index + 1 << " \033[0;32m | \033[0m",
-    std::cout << "First Name => " << this->Contact_list[index].getFirstName() << " \033[0;32m | \033[0m"<< "Second Name" << 
-    this->Contact_list[index].getSecondName() << " \033[0;32m | \033[0m" << "Nich Name => " <<
-    this->Contact_list[index].getNickName() <<  " \033[0;32m | \033[0m" << std::endl;
+    std::cout << "First Name => ";
+	if (this->Contact_list[index].getFirstName().length() > 10)
+		std::cout << this->Contact_list[index].getFirstName().substr(0, 10).append(".");
+	else
+		std::cout << this->Contact_list[index].getFirstName();
+	std::cout  << " \033[0;32m | \033[0m" << "Second Name => ";
+	if(this->Contact_list[index].getSecondName().length() > 10)
+    	std::cout << this->Contact_list[index].getSecondName().substr(0, 10).append(".");
+	else
+    	std::cout << this->Contact_list[index].getSecondName();
+	std::cout << " \033[0;32m | \033[0m" << "Nich Name => ";
+	if (this->Contact_list[index].getNickName().length() > 10)
+    	std::cout << this->Contact_list[index].getNickName().substr(0, 10).append(".");
+	else
+    	std::cout << this->Contact_list[index].getNickName();
+	std::cout <<  " \033[0;32m | \033[0m" << std::endl;
 }
 
 
