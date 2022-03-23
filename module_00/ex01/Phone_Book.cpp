@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 01:34:17 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 20:39:21 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:55:37 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	Search(Phone_Book *PhoneBook)
 		try{
 			idx = std::stoi(index);}
 		catch(const std::exception& e){
-			std::cout << "\033[0;31mInvalide Index\033[0m" << std::endl;}
+			std::cout << "\033[0;31mInvalide Index\033[0m" << std::endl;
+			continue;}
 		if (idx > 0 && idx < 9)
 			break;
 	}
