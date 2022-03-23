@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:01:24 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 20:10:41 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:39:05 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,19 @@ void    Phone_Book::SearchMethod(int index)
 	std::cout << "index : " <<  index + 1 << " \033[0;32m | \033[0m",
     std::cout << "First Name => " << this->Contact_list[index].getFirstName() << " \033[0;32m | \033[0m"<< "Second Name" << 
     this->Contact_list[index].getSecondName() << " \033[0;32m | \033[0m" << "Nich Name => " <<
+    this->Contact_list[index].getNickName() <<  " \033[0;32m | \033[0m" << std::endl;
+}
+
+
+void    Phone_Book::SearchByIndex(int index)
+{
+	std::cout << "index : " <<  index + 1 << " \033[0;32m | \033[0m",
+    std::cout << "First Name => " << this->Contact_list[index].getFirstName() << " \033[0;32m | \033[0m"<< "Second Name" << 
+    this->Contact_list[index].getSecondName() << " \033[0;32m | \033[0m" << "Nich Name => " <<
     this->Contact_list[index].getNickName() << " \033[0;32m | \033[0m"  << "Phone Number => " <<
     this->Contact_list[index].getPhoneNumber() << " \033[0;32m | \033[0m" << "The Secrete => " <<
     this->Contact_list[index].getDarkestSecret() << " \033[0;32m | \033[0m" << std::endl;
 }
-
 void	Phone_Book::AddMethod(){	
 	std::string FirstName;
 	std::string SecondName;
@@ -69,6 +77,10 @@ void	Phone_Book::AddMethod(){
 	std::getline(std::cin, PhoneNumber);
 	std::cout << "Add Darkest Secret : ";
 	std::getline(std::cin, DarkestSecret);
+	if (FirstName.empty() || SecondName.empty() || NickName.empty() || PhoneNumber.empty() || DarkestSecret.empty()){	
+		std::cout << "\033[0;31mCan't Save empty field\033[0m" << std::endl;
+		return ;
+	}
 	this->AddIndex = i;
 	this->Contact_list[this->AddIndex % 8].setFirstName_(FirstName);
 	this->Contact_list[this->AddIndex % 8].setSecondName_(SecondName);

@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 01:34:17 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 20:16:21 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:39:21 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	Search(Phone_Book *PhoneBook)
 		if (idx > 0 && idx < 9)
 			break;
 	}
-	PhoneBook->SearchMethod(idx - 1);	
+	PhoneBook->SearchByIndex(idx - 1);	
 }
 
 void	Add(Phone_Book *PhoneBook)
@@ -42,7 +42,7 @@ int main(int ac, char **av)
 	std::string UserInput;
 	Phone_Book PhoneBook;
 	if (ac != 1)
-		return (std::cout << "To many argument\n", 1);
+		return (std::cout << "\033[0;31mTo many argument\033[0m\n", 1);
 	std::cout << " ____________________________ " << std::endl;
 	std::cout << "|                            |" << std::endl;
 	std::cout << "|        1 -> SEARCH         |" << std::endl;
