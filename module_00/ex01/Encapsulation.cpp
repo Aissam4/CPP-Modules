@@ -12,6 +12,7 @@
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+
 std::string	Contact::getFirstName() { return this->FirstName_; }
 std::string Contact::getSecondName() { return this->SecondName_; }
 std::string Contact::getNickName() { return this->NickName_; }
@@ -31,4 +32,14 @@ Contact::Contact(){
     this->NickName_ = std::string();
     this->PhoneNumber_ = std::string();
     this->DarkestSecret_ = std::string();
+}
+
+void    Phone_Book::Search_(int index)
+{
+    std::cout << "First Name => " << this->Contact_list[index].getFirstName() << "Second Name" << 
+    this->Contact_list[index].getSecondName() << "Nich Name =>" <<
+    this->Contact_list[index].getNickName() << "Phone Number =>" <<
+    this->Contact_list[index].getPhoneNumber() << "The Secrete" <<
+    this->Contact_list[index].getDarkestSecret() << std::endl;
+
 }

@@ -21,10 +21,10 @@ private:
 	 int		SearchIndex;
 	 
 public:
-	std::string	Search(int index);
+	void	Search_(int index);
 	std::string	Add(int index);
-	Phone_Book();
-	~Phone_Book();
+	Phone_Book(){};
+	~Phone_Book(){};
 };
 
 #endif

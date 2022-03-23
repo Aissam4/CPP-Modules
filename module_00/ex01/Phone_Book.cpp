@@ -12,16 +12,17 @@
 
 # include "PhoneBook.hpp"
 
-void	CheckUserInput(int number)
+void	CheckUserInput(Phone_Book PhoneBook, int number)
 {
-	if (number == 1);
-	else if (number == 2){}
+	if (number == 1)
+		PhoneBook.Search_(1);
 }
 
 int main(int ac, char **av)
 {
 	(void)	av;
 	int		number;
+	Phone_Book PhoneBook;
 	if (ac != 1)
 		return (std::cout << "To many argument\n", 1);
 	while (1)
@@ -36,6 +37,6 @@ int main(int ac, char **av)
 		std::cin >> number;
 		if (number == 3)
 			break;
-		CheckUserInput(number);
+		CheckUserInput(PhoneBook, number);
 	}
 }
