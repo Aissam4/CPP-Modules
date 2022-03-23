@@ -11,20 +11,14 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
-void to_upper(char c)
-{
-	c = toupper(c);
-	std::cout << c;
-}
+#include <cstring>
 
 int main(int ac, char **av)
 {
 	if (ac == 1)
         return (std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *", 1);
 	for (int i = 1; i < ac; i++)
-	{
-		std::string argv = av[i];
-		std::for_each(argv.begin(), argv.end(), to_upper);
-	}
+		for(size_t j = 0; j < strlen(av[i]); j++)
+			std::cout << (av[i][j] = toupper(av[i][j]));
+	return (0);
 }

@@ -20,7 +20,7 @@ all: $(NAME)
 	$(CC) $(FLAGS) -c $< -o $@
 $(NAME) : $(OBJ_FILE)
 	$(CC) $(FLAGS) $(OBJ_FILE) -o $(NAME)
-clean :
+fclean :
 	rm -rf $(NAME)
 re : clean all
 .PHONY : clean fclean re
