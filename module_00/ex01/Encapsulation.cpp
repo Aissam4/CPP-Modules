@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:01:24 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 18:04:40 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:26:46 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 std::string	Contact::getFirstName() { return this->FirstName_; }
 std::string Contact::getSecondName() { return this->SecondName_; }
 std::string Contact::getNickName() { return this->NickName_; }
-int			Contact::getPhoneNumber() { return this->PhoneNumber_; }
+std::string	Contact::getPhoneNumber() { return this->PhoneNumber_; }
 std::string Contact::getDarkestSecret() { return this->DarkestSecret_; }
 
 void	Contact::setFirstName_(std::string _AttributeValue){ this->FirstName_ = _AttributeValue; }
 void	Contact::setSecondName_(std::string _AttributeValue){ this->SecondName_ = _AttributeValue; }
 void	Contact::setNickName_(std::string _AttributeValue){ this->NickName_ = _AttributeValue; }
-void	Contact::setPhoneNumber_(int _AttributeValue){ this->PhoneNumber_ = _AttributeValue; }
+void	Contact::setPhoneNumber_(std::string _AttributeValue){ this->PhoneNumber_ = _AttributeValue; }
 void	Contact::setDarkestSecret_(std::string _AttributeValue){ this->DarkestSecret_ = _AttributeValue; }
 
 Contact::Contact(){
     this->FirstName_ = std::string();
     this->SecondName_ = std::string();
     this->NickName_ = std::string();
-    this->PhoneNumber_ = 0;
+    this->PhoneNumber_ = std::string();
     this->DarkestSecret_ = std::string();
 }
 
@@ -58,7 +58,7 @@ void	Phone_Book::AddMethod(){
 	std::string NickName;
 	std::string	PhoneNumber;
 	std::string DarkestSecret;
-
+	static int i;
 	std::cout << "Add First Name : ";
 	std::getline(std::cin, FirstName);
 	std::cout << "Add Second Name : ";
@@ -69,9 +69,11 @@ void	Phone_Book::AddMethod(){
 	std::getline(std::cin, PhoneNumber);
 	std::cout << "Add Darkest Secret : ";
 	std::getline(std::cin, DarkestSecret);
+	this->AddIndex = i;
 	this->Contact_list[this->AddIndex % 8].setFirstName_(FirstName);
 	this->Contact_list[this->AddIndex % 8].setSecondName_(SecondName);
 	this->Contact_list[this->AddIndex % 8].setNickName_(NickName);
 	this->Contact_list[this->AddIndex % 8].setPhoneNumber_(PhoneNumber);
 	this->Contact_list[this->AddIndex % 8].setDarkestSecret_(DarkestSecret);
+	i++;
 }

@@ -6,17 +6,17 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 01:34:17 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 18:02:47 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:20:47 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "PhoneBook.hpp"
-void	Search(Phone_Book PhoneBook)
+void	Search(Phone_Book *PhoneBook)
 {
 	std::string index;
 	int idx;
 	for (int i = 0; i < 8; i++)
-		PhoneBook.SearchMethod(i);
+		PhoneBook->SearchMethod(i);
 	while (std::cin.good())
 	{
 		std::cout << "\033[0;36mSearch By Index => \033[0m";
@@ -28,12 +28,12 @@ void	Search(Phone_Book PhoneBook)
 		if (idx > 0 && idx < 9)
 			break;
 	}
-	PhoneBook.SearchMethod(idx - 1);	
+	PhoneBook->SearchMethod(idx - 1);	
 }
 
-void	Add(Phone_Book PhoneBook)
+void	Add(Phone_Book *PhoneBook)
 {
-	PhoneBook.AddMethod();
+	PhoneBook->AddMethod();
 }
 int main(int ac, char **av)
 {
@@ -54,9 +54,9 @@ int main(int ac, char **av)
 		std::cout << "\033[0;36mPhoneBook => \033[0m";
 		std::getline(std::cin, UserInput);
 		if (UserInput == "ADD")
-			Add(PhoneBook);
+			Add(&PhoneBook);
 		else if (UserInput == "SEARCH")
-			Search(PhoneBook);
+			Search(&PhoneBook);
 		else if (UserInput.empty() == 0)
 			std::cout << "\033[0;31minvalid inpute Pleas Try Agian\033[0m" << std::endl;
 	}
