@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:01:24 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 16:52:54 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:04:40 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,19 @@ void	Phone_Book::AddMethod(){
 	std::string FirstName;
 	std::string SecondName;
 	std::string NickName;
-	int			PhoneNumber;
+	std::string	PhoneNumber;
 	std::string DarkestSecret;
 
 	std::cout << "Add First Name : ";
-	std::cin >> FirstName;
+	std::getline(std::cin, FirstName);
 	std::cout << "Add Second Name : ";
-	std::cin >> SecondName;
+	std::getline(std::cin, SecondName);
 	std::cout << "Add Nick Name : ";
-	std::cin >> NickName;
+	std::getline(std::cin, NickName);
 	std::cout << "Add Phone Number : ";
-	std::cin >> PhoneNumber;
+	std::getline(std::cin, PhoneNumber);
 	std::cout << "Add Darkest Secret : ";
-	std::cin >> DarkestSecret;
+	std::getline(std::cin, DarkestSecret);
 	this->Contact_list[this->AddIndex % 8].setFirstName_(FirstName);
 	this->Contact_list[this->AddIndex % 8].setSecondName_(SecondName);
 	this->Contact_list[this->AddIndex % 8].setNickName_(NickName);
