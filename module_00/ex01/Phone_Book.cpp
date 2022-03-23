@@ -15,9 +15,7 @@
 void	CheckUserInput(int number)
 {
 	if (number == 1);
-	else if (number == 2);
-	else if (number == 3)
-		exit(0);
+	else if (number == 2){}
 }
 
 int main(int ac, char **av)
@@ -36,6 +34,8 @@ int main(int ac, char **av)
 		std::cout << "|____________________________| " << std::endl;
 		std::cout << "                               " << std::endl;
 		std::cin >> number;
+		if (number == 3)
+			break;
 		CheckUserInput(number);
 	}
 }

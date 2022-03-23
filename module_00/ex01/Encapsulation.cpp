@@ -23,3 +23,12 @@ void	Contact::setSecondName_(std::string _AttributeValue){ this->SecondName_ = _
 void	Contact::setNickName_(std::string _AttributeValue){ this->NickName_ = _AttributeValue; }
 void	Contact::setPhoneNumber_(std::string _AttributeValue){ this->PhoneNumber_ = _AttributeValue; }
 void	Contact::setDarkestSecret_(std::string _AttributeValue){ this->DarkestSecret_ = _AttributeValue; }
+
+Contact::Contact(){
+    this->index = 0;
+    this->FirstName_ = std::string();
+    this->SecondName_ = std::string();
+    this->NickName_ = std::string();
+    this->PhoneNumber_ = std::string();
+    this->DarkestSecret_ = std::string();
+}
