@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:01:24 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/23 18:26:46 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:10:41 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ Phone_Book::~Phone_Book(){}
 
 void    Phone_Book::SearchMethod(int index)
 {
-	std::cout << "index : " <<  index + 1 << " | ",
-    std::cout << "First Name => " << this->Contact_list[index].getFirstName() << " | "<< "Second Name" << 
-    this->Contact_list[index].getSecondName() << " | " << "Nich Name => " <<
-    this->Contact_list[index].getNickName() << " | "  << "Phone Number => " <<
-    this->Contact_list[index].getPhoneNumber() << " | " << "The Secrete => " <<
-    this->Contact_list[index].getDarkestSecret() << " | " << std::endl;
+	std::cout << "index : " <<  index + 1 << " \033[0;32m | \033[0m",
+    std::cout << "First Name => " << this->Contact_list[index].getFirstName() << " \033[0;32m | \033[0m"<< "Second Name" << 
+    this->Contact_list[index].getSecondName() << " \033[0;32m | \033[0m" << "Nich Name => " <<
+    this->Contact_list[index].getNickName() << " \033[0;32m | \033[0m"  << "Phone Number => " <<
+    this->Contact_list[index].getPhoneNumber() << " \033[0;32m | \033[0m" << "The Secrete => " <<
+    this->Contact_list[index].getDarkestSecret() << " \033[0;32m | \033[0m" << std::endl;
 }
 
 void	Phone_Book::AddMethod(){	
