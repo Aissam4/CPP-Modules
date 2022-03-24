@@ -6,7 +6,7 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/22 16:06:47 by abarchil          #+#    #+#              #
-#    Updated: 2022/02/22 16:22:58 by abarchil         ###   ########.fr        #
+#    Updated: 2022/03/23 17:22:09 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,5 +22,5 @@ $(NAME) : $(OBJ_FILE)
 	$(CC) $(FLAGS) $(OBJ_FILE) -o $(NAME)
 fclean :
 	rm -rf $(NAME)
-re : clean all
+re : fclean all
 .PHONY : clean fclean re
