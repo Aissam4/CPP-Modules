@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 23:27:00 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/24 00:22:06 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/24 22:31:47 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ public:
 	void	makeDeposit( int deposit );
 	bool	makeWithdrawal( int withdrawal );
 	
-	int		checkAmount( void ) const; //ignore
+	int		checkAmount( void ) const;
 	
-	void	displayStatus( void ) const; //
+	void	displayStatus( void ) const;
 };
 
 #endif
