@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 01:32:12 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/25 03:54:23 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:55:52 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 #define __ZOMBIE_HPP__
 #include <iostream>
 
-
 class Zombie
 {
 private:
 	std::string _name;
 public:
 	Zombie();
-	Zombie( std::string name): _name(name) {};
+	Zombie( std::string name ): _name(name) {};
 	~Zombie();
 	void announce( void );
 };
