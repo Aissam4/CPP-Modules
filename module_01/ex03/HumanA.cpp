@@ -1,11 +1,14 @@
 #include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-HumanA::HumanA(std::string WeaponType)
+HumanA::HumanA(std::string name, Weapon WeaponType)
 {
-	_weapon.setType(WeaponType);
+	_name = name;
+	_weapon = WeaponType;
 }
 
-HumanA::~HumanA(){};
+HumanA::~HumanA(){}
 
 void	HumanA::attack()
 {

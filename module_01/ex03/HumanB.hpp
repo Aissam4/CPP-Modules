@@ -3,13 +3,15 @@
 #define __HUMANB_HPP__
 #include  "Weapon.hpp"
 
-class HumanB{
+class HumanB
+{
 	private:
 		Weapon _weapon;
 		std::string _name;
 	public:
-		HumanB(std::string WeaponType);
+		HumanB( std::string name );
 		~HumanB();
+		void	setWeapon(Weapon WeaponType);
 		void	attack( void );
 };
 #endif

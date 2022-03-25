@@ -1,11 +1,15 @@
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string WeaponType)
+HumanB::HumanB(std::string name)
 {
-	_weapon.setType(WeaponType);
+	_name = name;
 }
 
 HumanB::~HumanB(){};
+
+void	HumanB::setWeapon(Weapon WeaponType){
+	this->_weapon = WeaponType;
+}
 
 void	HumanB::attack()
 {
