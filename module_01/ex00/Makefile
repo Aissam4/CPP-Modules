@@ -6,14 +6,14 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 01:31:47 by abarchil          #+#    #+#              #
-#    Updated: 2022/03/25 16:56:14 by abarchil         ###   ########.fr        #
+#    Updated: 2022/03/26 15:23:38 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC_FILE = main.cpp newZombie.cpp Zombie.cpp randomChump.cpp
 
-OBJ_FILE = $(SRC_FILE:.c=.o)
+OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 HEADER = Zombie.hpp
  
@@ -24,11 +24,13 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
-%.c:%.o
+%.o:%.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 $(NAME) : $(OBJ_FILE)
 	$(CC) $(FLAGS) $(OBJ_FILE) -o $(NAME)
+clean :
+	rm -rf $(OBJ_FILE)
 fclean :
-	rm -rf $(NAME)
+	rm -rf $(OBJ_FILE) $(NAME)
 re : fclean all
 .PHONY : clean fclean re
