@@ -32,7 +32,7 @@ void    Harl::complain( std::string level)
         func[2] = &Harl::warning,
         func[3] = &Harl::error,
     };
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
         if (level == FuncTable[i])
             (this->*func[i])();
