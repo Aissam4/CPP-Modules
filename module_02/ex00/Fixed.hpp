@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:11:31 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/29 16:16:05 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/29 16:42:31 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ class Fixed
 {
 private:
 	int					_FixedPointNum;
-	static const int	BitNum;
+	static const int	BitNum = 8;
 public:
 	Fixed( void );
-	Fixed(const Fixed &obj);
-	int		getRawBits( void );
-	void	setFixedPoint(int	FixedPoint);
-	Fixed	& Fixed::operator= (const Fixed);
+	Fixed(const Fixed &);
+	int		getRawBits( void ) const;
+	void	setFixedPoint(int);
+	Fixed	& operator= (const Fixed &);
 	~Fixed( void );
 };
 
