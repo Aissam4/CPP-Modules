@@ -14,7 +14,7 @@ SRC_FILE = main.cpp Fixed.cpp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
-NAME = Orthodox
+NAME = FixedPoint
 
 CC = c++
 

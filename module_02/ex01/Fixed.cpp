@@ -12,6 +12,40 @@
 
 #include "Fixed.hpp"
 
+Fixed::Fixed()
+{
+	std::cout << "Default constructor called" << std::endl;
+	this->_FixedPointNum = 0;
+}
+
+Fixed::Fixed(const Fixed &obj)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	this->_FixedPointNum = obj.getRawBits();
+}
+
+Fixed::Fixed(const int FixedPoint)
+{
+	std::cout << "int constuctor called" << std::endl;
+	this->_FixedPointNum = FixedPoint << this->BitNum;
+}
+
+Fixed::Fixed(const float FloatingPoint)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_FixedPointNum = (int)(roundf(FloatingPoint * (1 << this->BitNum)));
+}
+
+float Fixed::toFloat( void ) const
+{
+	return ((float)this->_FixedPointNum / (1 << this->BitNum));
+}
+
+int	Fixed::toInt( void ) const
+{
+	return ((int)this->_FixedPointNum >> this->BitNum);
+}
+
 void	Fixed::setFixedPoint(int	FixedPoint)
 {
 	this->_FixedPointNum = FixedPoint;
@@ -23,17 +57,12 @@ int		Fixed::getRawBits() const
 	return this->_FixedPointNum;
 }
 
-Fixed::Fixed()
-{
-	std::cout << "Default constructor called" << std::endl;
-	this->_FixedPointNum = 0;
-}
 
 Fixed::~Fixed( void )
 {
 	std::cout << "Destructor called" << std::endl;
 }
-// Operations
+
 Fixed	& Fixed::operator=(const Fixed &obj)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -43,16 +72,9 @@ Fixed	& Fixed::operator=(const Fixed &obj)
 		this->_FixedPointNum = obj.getRawBits();
 	return (*this);
 }
-Fixed	& Fixed::operator==(const Fixed &obj){}
-Fixed	& Fixed::operator!=(const Fixed &obj){}
-Fixed	& Fixed::operator<(const Fixed &obj){}
-Fixed	& Fixed::operator<=(const Fixed &obj){}
-Fixed	& Fixed::operator>(const Fixed &obj){}
-Fixed	& Fixed::operator>=(const Fixed &obj){}
 
-
-Fixed::Fixed(const Fixed &obj)
+std::ostream &operator<<(std::ostream& Mystream, const Fixed& data)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	this->_FixedPointNum = obj.getRawBits();
+    Mystream << data.toFloat();
+    return Mystream;
 }
