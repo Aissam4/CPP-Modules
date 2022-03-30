@@ -6,14 +6,13 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 12:09:40 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/29 16:09:30 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/30 17:12:56 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int main(void)
-{
+int main( void ) {
 	Fixed a;
 	Fixed const b( 10 );
 	Fixed const c( 42.42f );
