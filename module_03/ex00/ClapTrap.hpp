@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:44:26 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/31 13:12:59 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:46:50 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ class ClapTrap
 {
     private:
         std::string _Name;
-        int         _Health;
-        int         _Energy;
-        int         _Damage;
+        int         _HitPoint;
+        int         _EnergyPoint;
+        int         _AttackDamage;
     public:
         ClapTrap();
+        ClapTrap(std::string name);
         ClapTrap( const ClapTrap &obj);
         std::string getName(void) const ;
         int         getHealth(void) const ;
