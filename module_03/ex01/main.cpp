@@ -6,14 +6,16 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:43:57 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/31 13:51:53 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/31 22:19:05 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Scavtrap.hpp"
 
 int main(void)
 {
+    {
+
     ClapTrap P1("Jhon");
     ClapTrap P2("Matrix");
     ClapTrap P3("Aissam");
@@ -23,4 +25,15 @@ int main(void)
     P1.beRepaired(5);
     P2.takeDamage(4);
     P2.beRepaired(2);
+    }
+    std::cout << "==================scavTrap Tests=======================" << std::endl;
+    {
+        ScavTrap Moster("Jhon");
+        Moster.guardGate();
+        Moster.attack("Bob");
+        Moster.beRepaired(10);
+        Moster.takeDamage(10);
+        Moster = ScavTrap("anOther");
+        Moster.attack("Bob");
+    }
 }

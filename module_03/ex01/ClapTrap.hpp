@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:44:26 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/31 13:46:50 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/03/31 21:27:25 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 class ClapTrap
 {
-    private:
+    protected:
         std::string _Name;
         int         _HitPoint;
         int         _EnergyPoint;
