@@ -6,12 +6,13 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 23:43:57 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/31 22:32:40 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:35:22 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Scavtrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 int main(void)
 {
     {
@@ -46,4 +47,7 @@ int main(void)
         Monster = FragTrap("anOther");
         Monster.attack("Bob");
     }
+    std::cout << "==================DiamondTrap Tests=======================" << std::endl;
+    DiamondTrap Monster("Bob");
+	Monster.whoAmI();
 }

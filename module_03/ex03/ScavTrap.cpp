@@ -6,11 +6,11 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 21:17:28 by abarchil          #+#    #+#             */
-/*   Updated: 2022/03/31 21:38:20 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:35:04 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Scavtrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
 ScavTrap::ScavTrap()
