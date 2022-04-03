@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 17:57:38 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/03 18:21:49 by abarchil         ###   ########.fr       */
+/*   Created: 2022/04/03 16:37:08 by abarchil          #+#    #+#             */
+/*   Updated: 2022/04/03 21:27:05 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
+#ifndef __DOG_HPP__
+#define __DOG_HPP__
 
-int main()
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+/* ------Derived class------- */
+
+class Dog : public Animal
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    meta->makeSound();
-    delete j;
-    delete i;
-    delete meta;
-    return 0;
-}
+     private:
+        Brain *element;
+    public:
+        Dog();
+        Dog(const Dog &obj);
+        Dog  &   operator = (const Dog &obj);
+        void makeSound() const ;
+        ~Dog();
+};
+
+#endif

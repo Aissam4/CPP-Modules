@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 17:57:38 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/03 18:21:49 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/03 21:58:20 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
+    std::cout << "======= My tests=======" << std::endl;
+    Animal* Flock[100];
+    for (int i = 0; i  < 50; i++)
+        Flock[i] = new Dog();
+    for (int i = 50; i < 100; i++)
+        Flock[i] = new Cat();
+    std::cout << "======= Subject Test =======" << std::endl;
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    meta->makeSound();
     delete j;
     delete i;
-    delete meta;
+    while (1);
     return 0;
 }

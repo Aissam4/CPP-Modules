@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 17:57:38 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/03 18:21:49 by abarchil         ###   ########.fr       */
+/*   Created: 2022/04/03 20:49:11 by abarchil          #+#    #+#             */
+/*   Updated: 2022/04/03 21:25:50 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
-#include "Dog.hpp"
-
-int main()
+#ifndef __BRAIN_HPP__
+#define __BRAIN_HPP__
+# include <iostream>
+    
+class Brain
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    meta->makeSound();
-    delete j;
-    delete i;
-    delete meta;
-    return 0;
-}
+    private:
+        std::string _Ideas[100];
+    public:
+        Brain();
+        Brain(const Brain &obj);
+        Brain  &   operator = (const Brain &obj);
+        virtual ~Brain();
+};
+
+#endif
