@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 19:39:21 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/05 21:18:27 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/05 21:30:35 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Form
 {
     private:
-        std::string const _Name;
+        std::string       _Name;
         bool              _Signe;
         int             _ExecutedGrade;
         int             _SignedGrade;
@@ -43,5 +43,5 @@ class Form
     void beSigned(Bureaucrat & bureaucrat);
 };
 
-std::ostream & operator<<(std::ostream & o, Form const & obj);
+std::ostream & operator<<(std::ostream & Mystream, Form const & obj);
 #endif
