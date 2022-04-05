@@ -6,11 +6,11 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:53:38 by abarchil          #+#    #+#              #
-#    Updated: 2022/04/04 20:48:23 by abarchil         ###   ########.fr        #
+#    Updated: 2022/04/05 21:16:56 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILE = main.cpp Bureaucrat.cpp
+SRC_FILE = main.cpp Bureaucrat.cpp Form.cpp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
