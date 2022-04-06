@@ -6,15 +6,15 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:53:38 by abarchil          #+#    #+#              #
-#    Updated: 2022/04/05 21:53:52 by abarchil         ###   ########.fr        #
+#    Updated: 2022/04/06 02:52:19 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILE = main.cpp Bureaucrat.cpp Form.cpp
+SRC_FILE = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
-NAME = Form
+NAME = Form_V2
 
 CC = c++
 

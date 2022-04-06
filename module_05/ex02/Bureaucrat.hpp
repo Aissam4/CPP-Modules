@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 20:03:47 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/05 21:53:28 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/06 03:02:21 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ class Bureaucrat
         };
 		void		incrementGrade( void );
 		void		decrementGrade( void );
-        void        signeForm( Form & form_ );
+        void        signForm( Form & form_ );
+        void        executeForm(Form const & form);
         Bureaucrat  &operator = (const Bureaucrat &obj);
        ~Bureaucrat();
 };

@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 20:31:08 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/05 22:11:24 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/06 02:56:00 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,17 @@ void    Form::beSigned(Bureaucrat & bureaucrat)
     if (bureaucrat.getGrade() > this->getSignedGrade())
         throw Form::GradeTooLowException();
     this->_Signe = true;
+}
+
+void Form::execute(Bureaucrat const & executor) const
+{
+    if (executor.getGrade() > this->getExecutedGrade())
+        throw Form::GradeTooLowException();
+    if (this->getSigned())
+    {   
+        std::cout << "The Bureaucrat " << executor.getName() << " executed " << this->getName() << std::endl;
+        this->action();
+    }
+    else
+        std::cout << "couldn't execute form because it's not signed" << std::endl;
 }
