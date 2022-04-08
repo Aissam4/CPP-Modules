@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:31:31 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/08 07:26:17 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/08 08:48:17 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,12 @@ void    TooChar(std::string &str)
         num = atoi(str.c_str());
     else
     {
-        std::cout << "Char : " << str << std::endl;
+        if (str[0] < '9')
+            std::cout << "Char : " << "No printible character" << std::endl;
+        else
+            std::cout << "Char : " << str << std::endl;
         return ;        
-    }   
+    }
     if (num < 126 && num > 32)
         std::cout << "Char : " << char(num) << std::endl;
     else
@@ -60,7 +63,7 @@ int CheckZeros(std::string str, size_t index)
 {
     for (; index < str.length(); index++)
     {
-        if (str[index] != '0')
+        if (!isdigit(str[index]))
             return (-1);
     }
     return (1);
@@ -68,42 +71,23 @@ int CheckZeros(std::string str, size_t index)
 
 void   TooFloat(std::string str)
 {
-    float num = std::strtof(str.c_str(), nullptr);
-    size_t index  = str.find('.');
-    int Zeronumber = 0;
-    index++;
-    if (index != 0 && CheckZeros(str, index) == 1)
-    {    
-        for (; index < str.length(); index++){
-            if (str[index] == '0')
-                Zeronumber++;}   
-        std::cout << "Float : " << num << ".";
-        while (Zeronumber-- > 0)
-            std::cout << "0";
-        std::cout << "f" << std::endl;
+    float nbr = std::stof(str);
+    if (nbr - static_cast<int>(nbr) == 0){
+        std::cout << "Float : " << nbr << ".0f" << std::endl;
+        return ;
     }
-    else
-        std::cout << "Float : " << num << ".0f" << std::endl;
+    std::cout << "Float : " << nbr << "f" << std::endl;
 }
 
 void   TooDouble(std::string str)
 {
-    float num = std::strtof(str.c_str(), nullptr);
-    size_t index  = str.find('.');
-    int Zeronumber = 0;
-    index++;
-    if (index != 0 && CheckZeros(str, index) == 1)
-    {    
-        for (; index < str.length(); index++){
-            if (str[index] == '0')
-                Zeronumber++;} 
-        std::cout << "Double : " << num << ".";
-        while (Zeronumber-- > 0)
-            std::cout << "0";
-        std::cout << std::endl;
+    double nbr = std::strtod(str.c_str(), nullptr);
+
+    if (nbr - static_cast<int>(nbr) == 0) {
+        std::cout << "Double : " << nbr << ".0" << std::endl;
+        return ;
     }
-    else
-        std::cout << "Double : " << num << ".0" << std::endl;
+    std::cout << "Double : " << nbr << std::endl;
 }
 
 
