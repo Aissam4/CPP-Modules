@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:31:31 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/08 00:58:34 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/08 07:26:17 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void   TooFloat(std::string str)
     size_t index  = str.find('.');
     int Zeronumber = 0;
     index++;
-    if (index != 0 && CheckZeros(str, index))
+    if (index != 0 && CheckZeros(str, index) == 1)
     {    
         for (; index < str.length(); index++){
             if (str[index] == '0')
@@ -83,7 +83,7 @@ void   TooFloat(std::string str)
         std::cout << "f" << std::endl;
     }
     else
-        std::cout << "Float : " << num << "f" << std::endl;
+        std::cout << "Float : " << num << ".0f" << std::endl;
 }
 
 void   TooDouble(std::string str)
@@ -92,18 +92,18 @@ void   TooDouble(std::string str)
     size_t index  = str.find('.');
     int Zeronumber = 0;
     index++;
-    if (index != 0 && CheckZeros(str, index))
+    if (index != 0 && CheckZeros(str, index) == 1)
     {    
         for (; index < str.length(); index++){
             if (str[index] == '0')
-                Zeronumber++;}   
-        std::cout << "Double : " << num;
+                Zeronumber++;} 
+        std::cout << "Double : " << num << ".";
         while (Zeronumber-- > 0)
             std::cout << "0";
         std::cout << std::endl;
     }
     else
-        std::cout << "Double : " << num << std::endl;
+        std::cout << "Double : " << num << ".0" << std::endl;
 }
 
 
