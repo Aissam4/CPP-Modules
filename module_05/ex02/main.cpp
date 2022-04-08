@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 19:48:54 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/06 03:02:45 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/06 04:49:47 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main(void)
         Form *SCF = new ShrubberyCreationForm("home");
         Bureaucrat b1("Bob", 136);
         Bureaucrat b2("Jhon", 145);
+        SCF->action();
         b2.signForm(*SCF);
         b1.executeForm(*SCF);
 

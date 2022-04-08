@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 19:48:54 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/06 03:38:42 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/06 04:48:38 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include "Intern.hpp"
+# include "Intern.hpp"
 int main(void)
 {
     Intern intern;
