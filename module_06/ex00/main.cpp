@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 20:31:31 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/08 08:48:17 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/08 09:20:11 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,35 @@ bool    check_if_valid(std::string &str)
     return (true);
 }
 
-int TooInt(std::string &str)
+void    TooInt(std::string &str)
 {
+    int nbr;
     if (str.length() == 1 && !isdigit(str[0]))
-        return int(str[0]);
+    {
+        std::cout << "Integer : " << int(str[0]) << std::endl;
+        return ;
+    }
     else
-        return atoi(str.c_str());
+        nbr = atoi(str.c_str());
+    if (str.length() > 2 && nbr == 0)
+        std::cout << "Integer : impossible" << std::endl;
+    else
+        std::cout << "Integer : " << nbr << std::endl;
+
 }
 
 void    TooChar(std::string &str)
 {
     int num = 0;
     if (str.length() > 1)
+    {
         num = atoi(str.c_str());
+        if (num == 0 && str.length() > 2)
+        {
+            std::cout << "Char : impossible" << std::endl;
+            return ;
+        }   
+    }
     else
     {
         if (str[0] < '9')
@@ -71,7 +87,11 @@ int CheckZeros(std::string str, size_t index)
 
 void   TooFloat(std::string str)
 {
-    float nbr = std::stof(str);
+    float nbr;
+    if (str.length() == 1)
+    nbr = float(int(str[0]));
+    else
+        nbr = std::stof(str);
     if (nbr - static_cast<int>(nbr) == 0){
         std::cout << "Float : " << nbr << ".0f" << std::endl;
         return ;
@@ -81,7 +101,11 @@ void   TooFloat(std::string str)
 
 void   TooDouble(std::string str)
 {
-    double nbr = std::strtod(str.c_str(), nullptr);
+    double nbr;
+    if (str.length() == 1)
+        nbr = double(int(str[0]));
+    else
+        nbr = std::strtod(str.c_str(), nullptr);
 
     if (nbr - static_cast<int>(nbr) == 0) {
         std::cout << "Double : " << nbr << ".0" << std::endl;
@@ -90,16 +114,21 @@ void   TooDouble(std::string str)
     std::cout << "Double : " << nbr << std::endl;
 }
 
+bool    checkPseudo(std::string &str)
+{
+    return (str == "nan" || str == "nanf" || str == "+inf" || str == "inf" || str == "-inf"
+            || str == "+inff" || str == "inff" || str == "-inff");
+}
 
 int main(int ac, char **av)
 {
     if (ac != 2)
         return (std::cout << "Error : Invalid argument" << std::endl, 1);
     std::string str = av[1];
-    if (check_if_valid(str))
+    if (check_if_valid(str) || checkPseudo(str))
     {
         TooChar(str);
-        std::cout << "Integer : " << TooInt(str) << std::endl;
+        TooInt(str);
         TooFloat(str);
         TooDouble(str);
     }
