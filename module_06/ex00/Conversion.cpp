@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:21:45 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/08 09:21:46 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/09 01:45:47 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void    TooChar(std::string &str)
             std::cout << "Char : " << str << std::endl;
         return ;        
     }
-    if (num < 126 && num > 32)
+    if (num < 127 && num > 31)
         std::cout << "Char : " << char(num) << std::endl;
     else
         std::cout << "Char : " << "No printible character" << std::endl;

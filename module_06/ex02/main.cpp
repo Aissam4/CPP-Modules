@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:33:24 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/08 22:11:23 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/09 01:45:22 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ Base * generate(void)
 {
     Base    *result;
     int     random = rand() % 3;
-    if (random == 1)
+    if (random == 0)
         std::cout << "A generated" << std::endl, result = new A();
-    if (random == 2)
+    if (random == 1)
         std::cout << "B generated" << std::endl, result = new B();
-    if (random == 3)
+    if (random == 2)
         std::cout << "C generated" << std::endl, result = new C();
     return (result);
 }
