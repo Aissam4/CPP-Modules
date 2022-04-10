@@ -6,12 +6,11 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 20:30:33 by abarchil          #+#    #+#              #
-#    Updated: 2022/04/09 04:51:09 by abarchil         ###   ########.fr        #
+#    Updated: 2022/04/10 05:16:04 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC_FILE = main.cpp
-
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
 NAME = Template_V3

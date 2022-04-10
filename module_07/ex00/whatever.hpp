@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 03:08:38 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/09 04:41:24 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/10 04:41:36 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ void    swap(T &x, T &y)
 }
 
 template <typename T>
-T    min(T &x, T &y)
+T    min(T const &x, T const &y)
 {
     return (x > y) ? y : x;
 }
 template <typename T>
-T    max(T &x, T &y)
+T    max(T const &x, T const &y)
 {
     return (x < y) ? y : x;
 }
