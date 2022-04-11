@@ -6,14 +6,14 @@
 #    By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 20:30:33 by abarchil          #+#    #+#              #
-#    Updated: 2022/04/11 20:28:49 by abarchil         ###   ########.fr        #
+#    Updated: 2022/04/11 20:53:02 by abarchil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILE = main.cpp
+SRC_FILE = main.cpp Span.cpp
 OBJ_FILE = $(SRC_FILE:.cpp=.o)
 
-NAME = Easy_find
+NAME = Span
 
 CC = c++
 

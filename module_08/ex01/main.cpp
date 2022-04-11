@@ -6,28 +6,31 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:27:42 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/11 20:51:39 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/11 21:41:24 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
 
+#include "Span.hpp"
 int main(void)
 {
     {
-        std::vector<int>    Vec;
-        Vec.push_back(rand() % 200);
-        Vec.push_back(rand() % 200);
-        Vec.push_back(rand() % 200);
-        Vec.push_back(rand() % 200);
-        Vec.push_back(10);
-        Vec.push_back(rand() % 200);
-        Vec.push_back(rand() % 200);
-        Vec.push_back(rand() % 200);
-        std::cout << "Vector : ";
-        for (std::vector<int>::iterator ptr = Vec.begin(); ptr < Vec.end(); ptr++)
-            std::cout << *ptr << " | ";
-        std::cout << std::endl;
-        std::cout << "The number 10 found at " << easyfind(Vec, 10) << " index" << std::endl;
+        Span sp = Span(5);
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+        std::cout << "The Shortest Span is : " << sp.shortestSpan() << std::endl;
+        std::cout << "The Longest  Span is : " << sp.longestSpan() << std::endl;
     }
+    
+    {
+        Span sp = Span(1000);
+        for (int i = 0; i < 1000; i++)
+            sp.addNumber(rand());
+        std::cout << "The Shortest Span is : " << sp.shortestSpan() << std::endl;
+        std::cout << "The Longest  Span is : " << sp.longestSpan() << std::endl;
+    }
+    return 0;
 }
