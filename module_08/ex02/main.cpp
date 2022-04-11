@@ -6,7 +6,7 @@
 /*   By: abarchil <abarchil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 20:27:42 by abarchil          #+#    #+#             */
-/*   Updated: 2022/04/11 22:15:21 by abarchil         ###   ########.fr       */
+/*   Updated: 2022/04/11 22:16:55 by abarchil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ int main(void)
     ++it;
     --it;
     while (it++ != ite)
-    {
         std::cout << " |  " << *it << " |" << std::endl;
-    }
     std::stack<int> s(mstack);
     return 0;
 }
